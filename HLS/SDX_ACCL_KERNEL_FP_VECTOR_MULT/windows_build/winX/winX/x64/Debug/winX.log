@@ -1,0 +1,65 @@
+﻿  srai_accel_utils_winx.cpp
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\common_src\pcie_memio_winx.h(191): warning C4101: 'AXI_ADDRESS': unreferenced local variable
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\common_src\srai_accel_utils_winx.cpp(353): warning C4244: 'argument': conversion from '__int64' to 'uint32_t', possible loss of data
+  floating_point_vector_mult.cpp
+c:\xilinx\vivado\2017.4\include\etc\ap_private.h(513): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\xilinx\vivado\2017.4\include\etc\ap_private.h(539): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\xilinx\vivado\2017.4\include\etc\ap_fixed_sim.h(2407): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\xilinx\vivado\2017.4\include\etc\ap_fixed_sim.h(2409): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\xilinx\vivado\2017.4\include\etc\ap_fixed_sim.h(2440): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\floating_point_vector_mult.cpp(5): warning C4068: unknown pragma
+  kernel_WRAPPER.cpp
+c:\xilinx\vivado\2017.4\include\etc\ap_private.h(513): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\xilinx\vivado\2017.4\include\etc\ap_private.h(539): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\xilinx\vivado\2017.4\include\etc\ap_fixed_sim.h(2407): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\xilinx\vivado\2017.4\include\etc\ap_fixed_sim.h(2409): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\xilinx\vivado\2017.4\include\etc\ap_fixed_sim.h(2440): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\kernel_wrapper.cpp(4): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\kernel_wrapper.cpp(6): warning C4102: 'kernel_WRAPPER_label0': unreferenced label
+  sdx_cppKernel_top.cpp
+c:\xilinx\vivado\2017.4\include\etc\ap_private.h(513): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\xilinx\vivado\2017.4\include\etc\ap_private.h(539): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\xilinx\vivado\2017.4\include\etc\ap_fixed_sim.h(2407): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\xilinx\vivado\2017.4\include\etc\ap_fixed_sim.h(2409): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\xilinx\vivado\2017.4\include\etc\ap_fixed_sim.h(2440): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\common_src\sdx_pack_unpack.h(18): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\common_src\sdx_pack_unpack.h(42): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\common_src\sdx_pack_unpack.h(65): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\common_src\sdx_pack_unpack.h(73): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\common_src\sdx_pack_unpack.h(82): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\common_src\sdx_pack_unpack.h(106): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\sdx_cppkernel_top.cpp(7): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\sdx_cppkernel_top.cpp(8): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\sdx_cppkernel_top.cpp(9): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\sdx_cppkernel_top.cpp(10): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\sdx_cppkernel_top.cpp(11): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\sdx_cppkernel_top.cpp(12): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\sdx_cppkernel_top.cpp(21): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\sdx_cppkernel_top.cpp(22): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\sdx_cppkernel_top.cpp(26): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\sdx_cppkernel_top.cpp(28): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\sdx_cppkernel_top.cpp(30): warning C4068: unknown pragma
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\sdx_cppkernel_top.cpp(20): warning C4102: 'sdx_cppKernel_top_local_data_loop': unreferenced label
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\sdx_cppkernel_top.cpp(25): warning C4102: 'kernel_WRAPPER_label0': unreferenced label
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\common_src\sdx_pack_unpack.h(75): warning C4244: '=': conversion from 'unsigned __int64' to 'uint32_t', possible loss of data
+  c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\common_src\sdx_pack_unpack.h(72): note: while compiling class template member function 'void sdx_pack_unpack<srai_conv>::unpack_sdx_512_data(ap_uint<512> *,float [])'
+  c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\sdx_cppkernel_top.cpp(32): note: see reference to function template instantiation 'void sdx_pack_unpack<srai_conv>::unpack_sdx_512_data(ap_uint<512> *,float [])' being compiled
+  c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\sdx_cppkernel_top.cpp(18): note: see reference to class template instantiation 'sdx_pack_unpack<srai_conv>' being compiled
+  tb_fp_vector_mult.cpp
+c:\xilinx\vivado\2017.4\include\etc\ap_private.h(513): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\xilinx\vivado\2017.4\include\etc\ap_private.h(539): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\xilinx\vivado\2017.4\include\etc\ap_fixed_sim.h(2407): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\xilinx\vivado\2017.4\include\etc\ap_fixed_sim.h(2409): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\xilinx\vivado\2017.4\include\etc\ap_fixed_sim.h(2440): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\common_src\pcie_memio_winx.h(191): warning C4101: 'AXI_ADDRESS': unreferenced local variable
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\tb_fp_vector_mult.cpp(247): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\tb_fp_vector_mult.cpp(274): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned __int64'
+  c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\tb_fp_vector_mult.cpp(274): note: consider using '%lld' in the format string
+  c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\tb_fp_vector_mult.cpp(274): note: consider using '%Id' in the format string
+  c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\tb_fp_vector_mult.cpp(274): note: consider using '%I64d' in the format string
+c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\tb_fp_vector_mult.cpp(275): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned __int64'
+  c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\tb_fp_vector_mult.cpp(275): note: consider using '%lld' in the format string
+  c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\tb_fp_vector_mult.cpp(275): note: consider using '%Id' in the format string
+  c:\projects\vcu1525_hls_acceleration_framework_split_xdma\hls\sdx_accl_kernel_fp_vector_mult\src\tb_fp_vector_mult.cpp(275): note: consider using '%I64d' in the format string
+  Generating Code...
+  winX.vcxproj -> C:\projects\VCU1525_HLS_acceleration_framework_split_xDMA\HLS\SDX_ACCL_KERNEL_FP_VECTOR_MULT\windows_build\winX\x64\Debug\winX.exe

@@ -1,0 +1,12 @@
+HLS_INCLUDE := ../../HLS_include
+CPP := g++
+#CPP := xcpp 
+INCLUDES   :=  -I$(HLS_INCLUDE) -I../../common_src -I../src
+KERNEL_FREQUENCY_MHZ := 100
+
+SRCS_HOST  :=  ../../common_src/srai_accel_utils.cpp ../../common_src/getCPUTime.cpp
+
+CXXFLAGS_GPP_ONLY := -O3 -std=c++0x -DLINUX_BUILD -DGPP_ONLY_FLOW $(INCLUDES) -lrt 
+CXXFLAGS_GPP_ONLY_DEBUG := -g3 -std=c++0x -DLINUX_BUILD -DGPP_ONLY_FLOW $(INCLUDES) -lrt 
+CXXFLAGS_GPP_HW   := -O3 -std=c++0x -DLINUX_BUILD $(INCLUDES) -lrt
+CXXFLAGS_GPP_HW_DEBUG   := -g3 -std=c++0x -DLINUX_BUILD $(INCLUDES) -lrt 

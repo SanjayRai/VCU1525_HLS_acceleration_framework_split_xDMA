@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LocalDebuggerCommandArguments>C:\projects\VCU1525_HLS_acceleration_framework_split_xDMA\bitfiles\role\VU9P_AXI_ICAP_PR_DESIGN_top.IP_SDX_ACCL_KERNEL_FP_VECTOR_MULT_pblock_role_HLS_PR_NORTH_partial.bin</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+</Project>

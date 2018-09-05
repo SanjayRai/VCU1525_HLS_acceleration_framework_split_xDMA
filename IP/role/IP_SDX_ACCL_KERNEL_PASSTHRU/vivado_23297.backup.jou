@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Mon Jul  2 17:50:24 2018
+# Process ID: 23297
+# Current directory: /home/sanjayr/projects/VCU1525/VCU1525_HLS_acceleration_framework_split_xDMA/IP/role/IP_SDX_ACCL_KERNEL_PASSTHRU
+# Command line: vivado -mode batch -source inital_hls_sdx_import.tcl
+# Log file: /home/sanjayr/projects/VCU1525/VCU1525_HLS_acceleration_framework_split_xDMA/IP/role/IP_SDX_ACCL_KERNEL_PASSTHRU/vivado.log
+# Journal file: /home/sanjayr/projects/VCU1525/VCU1525_HLS_acceleration_framework_split_xDMA/IP/role/IP_SDX_ACCL_KERNEL_PASSTHRU/vivado.jou
+#-----------------------------------------------------------
+source inital_hls_sdx_import.tcl

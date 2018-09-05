@@ -1,0 +1,6 @@
+cd ./vivado_batch_SDX_ACCL_KERNEL_PASSTHRU; bsub -q long -n 16 -R "select[type=X86_64 && osdistro=rhel && osver=ws6] rusage [mem=16000]" 'vivado -source vivado_batch.tcl -mode batch'
+cd ./vivado_batch_SDX_ACCL_MATRIX_INVERT_4X4_CPP_KERNEL; bsub -q long -n 16 -R "select[type=X86_64 && osdistro=rhel && osver=ws6] rusage [mem=16000]" 'vivado -source vivado_batch.tcl -mode batch'
+cd ./vivado_batch_SDX_ACCL_MATRIX_INVERT_5X5_CPP_KERNEL; bsub -q long -n 16 -R "select[type=X86_64 && osdistro=rhel && osver=ws6] rusage [mem=16000]" 'vivado -source vivado_batch.tcl -mode batch'
+cd ./vivado_batch_SDX_ACCL_MATRIX_MULT_6X6; bsub -q long -n 16 -R "select[type=X86_64 && osdistro=rhel && osver=ws6] rusage [mem=16000]" 'vivado -source vivado_batch.tcl -mode batch'
+cd ./vivado_batch_SDX_ACCL_MATRIX_MULT_8X8; bsub -q long -n 16 -R "select[type=X86_64 && osdistro=rhel && osver=ws6] rusage [mem=16000]" 'vivado -source vivado_batch.tcl -mode batch'
+cd ./vivado_batch_SDX_ACCL_KERNEL_FP_VECTOR_MULT; bsub -q long -n 16 -R "select[type=X86_64 && osdistro=rhel && osver=ws6] rusage [mem=16000]" 'vivado -source vivado_batch.tcl -mode batch'
