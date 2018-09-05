@@ -20,9 +20,7 @@ upvar 1 $ARGV_0 ROLE_NAME
     ../src/role_NORTH/role_NORTH.sv
     }
 
-    read_xdc "
-    ../src/role_NORTH/xdc/role_NORTH.xdc
-    "
+    read_xdc -mode out_of_context -ref role_NORTH  ../src/role_NORTH/xdc/role_NORTH.xdc
 
     synth_design -keep_equivalent_registers -shreg_min_size 8 -include_dirs ../src -top role_NORTH -verilog_define XSDB_SLV_DIS -mode out_of_context  -part [DEVICE_TYPE] 
     
@@ -49,7 +47,19 @@ upvar 1 $ARGV_2 ROLE_CLK_PERIOD
     write_checkpoint -force ./$TOP_module.$NORTH_ROLE_NAME.post_synth_opt.dcp
     place_design -verbose -no_bufg_opt -directive Explore
     write_checkpoint -force ./$TOP_module.$NORTH_ROLE_NAME.post_place.dcp
+
+    set_clock_uncertainty -setup 0.200 -from [get_clocks -of_objects [get_pins U_shell_top/PCIe_Bridge_ICAP_complex_i/xDMA_SUBSYS/pcie4_uscale_plus_0/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/O]] -to [get_clocks {U_shell_top/PCIe_Bridge_ICAP_complex_i/xDMA_SUBSYS/pcie4_uscale_plus_0/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/PCIe_Bridge_ICAP_complex_pcie4_uscale_plus_0_0_gt_i/inst/gen_gtwizard_gtye4_top.PCIe_Bridge_ICAP_complex_pcie4_uscale_plus_0_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[29].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK}]
+    set_clock_uncertainty -setup 0.200 -from [get_clocks {U_shell_top/PCIe_Bridge_ICAP_complex_i/xDMA_SUBSYS/pcie4_uscale_plus_0/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/PCIe_Bridge_ICAP_complex_pcie4_uscale_plus_0_0_gt_i/inst/gen_gtwizard_gtye4_top.PCIe_Bridge_ICAP_complex_pcie4_uscale_plus_0_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[29].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK}] -to [get_clocks -of_objects [get_pins U_shell_top/PCIe_Bridge_ICAP_complex_i/xDMA_SUBSYS/pcie4_uscale_plus_0/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/O]]
+    set_clock_uncertainty -setup 0.200 -from [get_clocks {U_shell_top/PCIe_Bridge_ICAP_complex_i/xDMA_SUBSYS/pcie4_uscale_plus_0/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/PCIe_Bridge_ICAP_complex_pcie4_uscale_plus_0_0_gt_i/inst/gen_gtwizard_gtye4_top.PCIe_Bridge_ICAP_complex_pcie4_uscale_plus_0_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[29].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK}] -to [get_clocks {U_shell_top/PCIe_Bridge_ICAP_complex_i/xDMA_SUBSYS/pcie4_uscale_plus_0/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/PCIe_Bridge_ICAP_complex_pcie4_uscale_plus_0_0_gt_i/inst/gen_gtwizard_gtye4_top.PCIe_Bridge_ICAP_complex_pcie4_uscale_plus_0_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[29].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK}]
+    set_clock_uncertainty -setup 0.300 -from [get_clocks SRAI_PROG_CLK] -to [get_clocks SRAI_PROG_CLK]
+    
     phys_opt_design  -verbose -directive Explore
+
+    set_clock_uncertainty -setup 0.000 -from [get_clocks -of_objects [get_pins U_shell_top/PCIe_Bridge_ICAP_complex_i/xDMA_SUBSYS/pcie4_uscale_plus_0/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/O]] -to [get_clocks {U_shell_top/PCIe_Bridge_ICAP_complex_i/xDMA_SUBSYS/pcie4_uscale_plus_0/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/PCIe_Bridge_ICAP_complex_pcie4_uscale_plus_0_0_gt_i/inst/gen_gtwizard_gtye4_top.PCIe_Bridge_ICAP_complex_pcie4_uscale_plus_0_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[29].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK}]
+    set_clock_uncertainty -setup 0.000 -from [get_clocks {U_shell_top/PCIe_Bridge_ICAP_complex_i/xDMA_SUBSYS/pcie4_uscale_plus_0/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/PCIe_Bridge_ICAP_complex_pcie4_uscale_plus_0_0_gt_i/inst/gen_gtwizard_gtye4_top.PCIe_Bridge_ICAP_complex_pcie4_uscale_plus_0_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[29].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK}] -to [get_clocks -of_objects [get_pins U_shell_top/PCIe_Bridge_ICAP_complex_i/xDMA_SUBSYS/pcie4_uscale_plus_0/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/O]]
+    set_clock_uncertainty -setup 0.000 -from [get_clocks {U_shell_top/PCIe_Bridge_ICAP_complex_i/xDMA_SUBSYS/pcie4_uscale_plus_0/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/PCIe_Bridge_ICAP_complex_pcie4_uscale_plus_0_0_gt_i/inst/gen_gtwizard_gtye4_top.PCIe_Bridge_ICAP_complex_pcie4_uscale_plus_0_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[29].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK}] -to [get_clocks {U_shell_top/PCIe_Bridge_ICAP_complex_i/xDMA_SUBSYS/pcie4_uscale_plus_0/inst/gt_top_i/diablo_gt.diablo_gt_phy_wrapper/gt_wizard.gtwizard_top_i/PCIe_Bridge_ICAP_complex_pcie4_uscale_plus_0_0_gt_i/inst/gen_gtwizard_gtye4_top.PCIe_Bridge_ICAP_complex_pcie4_uscale_plus_0_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[29].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK}]
+    set_clock_uncertainty -setup 0.000 -from [get_clocks SRAI_PROG_CLK] -to [get_clocks SRAI_PROG_CLK]
+    
     write_checkpoint -force ./$TOP_module.$NORTH_ROLE_NAME.post_place_phys_opt.dcp
     route_design  -verbose -directive Explore
     write_checkpoint -force ./$TOP_module.$NORTH_ROLE_NAME.post_route.dcp
