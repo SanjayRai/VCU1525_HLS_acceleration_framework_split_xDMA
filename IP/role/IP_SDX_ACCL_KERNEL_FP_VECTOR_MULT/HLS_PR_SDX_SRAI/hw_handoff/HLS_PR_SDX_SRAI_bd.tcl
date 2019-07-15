@@ -114,42 +114,6 @@ if { $run_remote_bd_flow == 1 } {
 
 current_bd_design $design_name
 
-set bCheckIPsPassed 1
-##################################################################
-# CHECK IPs
-##################################################################
-set bCheckIPs 1
-if { $bCheckIPs == 1 } {
-   set list_check_ips "\ 
-xilinx.com:ip:axi_register_slice:2.1\
-xilinx.com:ip:proc_sys_reset:5.0\
-xilinx.com:ip:axi_clock_converter:2.1\
-xilinx.com:hls:sdx_cppKernel_top:1.0\
-xilinx.com:ip:ddr4:2.2\
-"
-
-   set list_ips_missing ""
-   common::send_msg_id "BD_TCL-006" "INFO" "Checking if the following IPs exist in the project's IP catalog: $list_check_ips ."
-
-   foreach ip_vlnv $list_check_ips {
-      set ip_obj [get_ipdefs -all $ip_vlnv]
-      if { $ip_obj eq "" } {
-         lappend list_ips_missing $ip_vlnv
-      }
-   }
-
-   if { $list_ips_missing ne "" } {
-      catch {common::send_msg_id "BD_TCL-115" "ERROR" "The following IPs are not found in the IP Catalog:\n  $list_ips_missing\n\nResolution: Please add the repository containing the IP(s) to the project." }
-      set bCheckIPsPassed 0
-   }
-
-}
-
-if { $bCheckIPsPassed != 1 } {
-  common::send_msg_id "BD_TCL-1003" "WARNING" "Will not continue with creation of design due to the error(s) above."
-  return 3
-}
-
 ##################################################################
 # DESIGN PROCs
 ##################################################################
@@ -191,9 +155,13 @@ proc create_hier_cell_MIG_CLOCK_CONV_3 { parentCell nameHier } {
 
   # Create interface pins
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI
+
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI_LITE
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI_LITE
+
 
   # Create pins
   create_bd_pin -dir I -type rst AXI_ARESET_N
@@ -279,9 +247,13 @@ proc create_hier_cell_MIG_CLOCK_CONV_2 { parentCell nameHier } {
 
   # Create interface pins
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI
+
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI_LITE
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI_LITE
+
 
   # Create pins
   create_bd_pin -dir I -type rst AXI_ARESET_N
@@ -367,9 +339,13 @@ proc create_hier_cell_MIG_CLOCK_CONV_0 { parentCell nameHier } {
 
   # Create interface pins
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI
+
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI_LITE
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI_LITE
+
 
   # Create pins
   create_bd_pin -dir I -type rst AXI_ARESET_N
@@ -455,9 +431,13 @@ proc create_hier_cell_PR_DDR4_MIG_3 { parentCell nameHier } {
 
   # Create interface pins
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 C3_SYS_CLK
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI_LITE
+
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:ddr4_rtl:1.0 c3_ddr4
+
 
   # Create pins
   create_bd_pin -dir I -type rst AXI_ARESETN
@@ -556,9 +536,13 @@ proc create_hier_cell_PR_DDR4_MIG_2 { parentCell nameHier } {
 
   # Create interface pins
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 C2_SYS_CLK
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI_LITE
+
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:ddr4_rtl:1.0 c2_ddr4
+
 
   # Create pins
   create_bd_pin -dir I -type rst AXI_ARESETN
@@ -657,9 +641,13 @@ proc create_hier_cell_PR_DDR4_MIG_0 { parentCell nameHier } {
 
   # Create interface pins
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 C0_SYS_CLK
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI_LITE
+
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:ddr4_rtl:1.0 c0_ddr4
+
 
   # Create pins
   create_bd_pin -dir I -type rst AXI_ARESETN
@@ -758,7 +746,9 @@ proc create_hier_cell_HLS_ip { parentCell nameHier } {
 
   # Create interface pins
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI
+
 
   # Create pins
   create_bd_pin -dir I -type rst ARESETN_125M
@@ -781,13 +771,6 @@ proc create_hier_cell_HLS_ip { parentCell nameHier } {
 
   # Create instance: sdx_cppKernel_top_0, and set properties
   set sdx_cppKernel_top_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:sdx_cppKernel_top:1.0 sdx_cppKernel_top_0 ]
-
-  set_property -dict [ list \
-   CONFIG.SUPPORTS_NARROW_BURST {0} \
-   CONFIG.NUM_READ_OUTSTANDING {1} \
-   CONFIG.NUM_WRITE_OUTSTANDING {1} \
-   CONFIG.MAX_BURST_LENGTH {1} \
- ] [get_bd_intf_pins /HLS_ip/sdx_cppKernel_top_0/s_axi_control]
 
   # Create interface connections
   connect_bd_intf_net -intf_net AXI_LITE_3Stage_reg_M_AXI [get_bd_intf_pins S_AXI] [get_bd_intf_pins axi_clock_converter_0/S_AXI]
@@ -846,17 +829,29 @@ proc create_hier_cell_DDR_SUB_SYS { parentCell nameHier } {
 
   # Create interface pins
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 C0_DDR4_S_AXI
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 C0_DDR4_S_AXI1
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 C0_DDR4_S_AXI2
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 C0_DDR4_S_AXI_CTRL
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 C0_DDR4_S_AXI_CTRL1
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 C0_DDR4_S_AXI_CTRL2
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 C0_SYS_CLK
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 C2_SYS_CLK
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 C3_SYS_CLK
+
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:ddr4_rtl:1.0 c0_ddr4
+
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:ddr4_rtl:1.0 c2_ddr4
+
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:ddr4_rtl:1.0 c3_ddr4
+
 
   # Create pins
   create_bd_pin -dir I -type rst AXI_ARESETN
@@ -945,7 +940,9 @@ proc create_hier_cell_AXI_MM_INPUT_REG { parentCell nameHier } {
 
   # Create interface pins
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI_0
+
 
   # Create pins
   create_bd_pin -dir I -type rst AXI_RESET_N
@@ -1011,7 +1008,9 @@ proc create_hier_cell_AXI_MM_3_stage_reg { parentCell nameHier } {
 
   # Create interface pins
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI
+
 
   # Create pins
   create_bd_pin -dir I -type clk m_axi_aclk
@@ -1072,7 +1071,9 @@ proc create_hier_cell_AXI_LITE_3Stage_reg { parentCell nameHier } {
 
   # Create interface pins
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI
+
 
   # Create pins
   create_bd_pin -dir I -type rst AXI_RESET_N
@@ -1148,14 +1149,17 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.FREQ_HZ {300000000} \
    ] $C0_SYS_CLK
+
   set C2_SYS_CLK [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 C2_SYS_CLK ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {300000000} \
    ] $C2_SYS_CLK
+
   set C3_SYS_CLK [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 C3_SYS_CLK ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {300000000} \
    ] $C3_SYS_CLK
+
   set M_AXI_TO_STATIC [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI_TO_STATIC ]
   set_property -dict [ list \
    CONFIG.ADDR_WIDTH {64} \
@@ -1164,6 +1168,7 @@ proc create_root_design { parentCell } {
    CONFIG.FREQ_HZ {250000000} \
    CONFIG.PROTOCOL {AXI4} \
    ] $M_AXI_TO_STATIC
+
   set S_AXI_FROM_STATIC [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI_FROM_STATIC ]
   set_property -dict [ list \
    CONFIG.ADDR_WIDTH {64} \
@@ -1196,6 +1201,7 @@ proc create_root_design { parentCell } {
    CONFIG.WUSER_BITS_PER_BYTE {0} \
    CONFIG.WUSER_WIDTH {0} \
    ] $S_AXI_FROM_STATIC
+
   set S_AXI_LITE_FROM_STATIC [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI_LITE_FROM_STATIC ]
   set_property -dict [ list \
    CONFIG.ADDR_WIDTH {32} \
@@ -1228,9 +1234,13 @@ proc create_root_design { parentCell } {
    CONFIG.WUSER_BITS_PER_BYTE {0} \
    CONFIG.WUSER_WIDTH {0} \
    ] $S_AXI_LITE_FROM_STATIC
+
   set c0_ddr4 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddr4_rtl:1.0 c0_ddr4 ]
+
   set c2_ddr4 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddr4_rtl:1.0 c2_ddr4 ]
+
   set c3_ddr4 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddr4_rtl:1.0 c3_ddr4 ]
+
 
   # Create ports
   set AXI_RESET_N [ create_bd_port -dir I -type rst AXI_RESET_N ]
@@ -1360,6 +1370,7 @@ proc create_root_design { parentCell } {
   # Restore current instance
   current_bd_instance $oldCurInst
 
+  validate_bd_design
   save_bd_design
 }
 # End of create_root_design()
