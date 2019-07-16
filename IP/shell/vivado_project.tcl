@@ -4,5 +4,6 @@ source ../../device_type.tcl
 create_project project_X project_X -part [DEVICE_TYPE] 
 
 add_files -fileset sources_1 -norecurse {
+./ila_ker_count/ila_ker_count.xci
 ./PCIe_Bridge_ICAP_complex/PCIe_Bridge_ICAP_complex.bd
 }
