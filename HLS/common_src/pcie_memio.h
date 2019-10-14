@@ -45,17 +45,17 @@ class fpga_xDMA_linux {
 
                 int fpga_poke (uint32_t register_offset, uint32_t val) {
                     volatile uint32_t *tmp_addr;
-                    tmp_addr = (uint32_t *)((uint8_t *)virt_page_base + register_offset);
+                    tmp_addr = (volatile uint32_t *)((uint8_t *)virt_page_base + register_offset);
 
-                    *((uint32_t *)tmp_addr) = val;
+                    *((volatile uint32_t *)tmp_addr) = val;
                     return 0;
                 }
 
                 uint32_t fpga_peek (uint32_t register_offset) {
                     volatile uint32_t *tmp_addr;
                     volatile uint32_t ret_val;
-                    tmp_addr = (uint32_t *)((uint8_t *)virt_page_base + register_offset);
-                    ret_val = *((uint32_t *)tmp_addr);
+                    tmp_addr = (volatile uint32_t *)((uint8_t *)virt_page_base + register_offset);
+                    ret_val = *((volatile uint32_t *)tmp_addr);
                     return(ret_val);
                 }
 
